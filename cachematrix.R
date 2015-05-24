@@ -1,7 +1,9 @@
 ## Coursera - Data Science Specialization
 ## R Programming W3 Assignment
 
-## Write a short comment describing this function
+## This function initializes set and get functions 
+## for the matrix and the methods for determining 
+## its inverse
 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
@@ -16,7 +18,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function checks the cache for the inverse, if it is available 
+## it will get the cached data and create the inverse accordingly
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
@@ -26,7 +29,7 @@ cacheSolve <- function(x, ...) {
         return(m)
     }
     data <- x$get()
-    m <- mean(data, ...)
+    m <- solve(data, ...)
     x$setinv(m)
     m
 }
